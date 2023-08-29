@@ -62,7 +62,6 @@ int main(int argc, string argv[])
     // pseudorandomly select a word for this game
     srand(time(NULL));
     string choice = options[rand() % LISTSIZE];
-    printf(RED "coice: %s\n", choice);
 
     // allow one more guess than the length of the word
     int guesses = wordsize + 1;
@@ -121,8 +120,7 @@ string get_guess(int wordsize)
     do
     {
         guess = get_string("Input a 5-letter word: ");
-    }
-    while (strlen(guess) != wordsize);
+    } while (strlen(guess) != wordsize);
 
     return guess;
 }
