@@ -1,0 +1,2 @@
+- Audio Aura for one listener in 2018 would be characterized by the average energy, valence, and danceability of their top 100 songs that year.
+- The calculation might not be very representative as it oversimplifies musical preferences. A better approach would involve long-term analysis, ranking weighting, real-time mood tracking, and considering lyrics and genres.
