@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        window.onload = function () {
+            // TODO: Add code to check answers to questions
+            // Multiple Choice
+            evaluation = document.createElement("p");
+
+            h3Planet = document.getElementById("Planet");
+            buttonEarth = document.getElementById("Earth");
+            buttonEarth.addEventListener("click", () => {
+                showParagraph(false);
+                buttonEarth.style.backgroundColor = "#FFCCCB";
+                buttonSaturn.style.backgroundColor = "#d9edff";
+                buttonJupiter.style.backgroundColor = "#d9edff";
+                buttonMars.style.backgroundColor = "#d9edff";
+            });
+            buttonSaturn = document.getElementById("Saturn");
+            buttonSaturn.addEventListener("click", () => {
+                showParagraph(false);
+                buttonEarth.style.backgroundColor = "#d9edff";
+                buttonSaturn.style.backgroundColor = "#FFCCCB";
+                buttonJupiter.style.backgroundColor = "#d9edff";
+                buttonMars.style.backgroundColor = "#d9edff";
+            });
+            buttonJupiter = document.getElementById("Jupiter");
+            buttonJupiter.addEventListener("click", () => {
+                showParagraph(true);
+                buttonEarth.style.backgroundColor = "#d9edff";
+                buttonSaturn.style.backgroundColor = "#d9edff";
+                buttonJupiter.style.backgroundColor = "#CCFFCD";
+                buttonMars.style.backgroundColor = "#d9edff";
+            });
+            buttonMars = document.getElementById("Mars");
+            buttonMars.addEventListener("click", () => {
+                showParagraph(false);
+                buttonEarth.style.backgroundColor = "#d9edff";
+                buttonSaturn.style.backgroundColor = "#d9edff";
+                buttonJupiter.style.backgroundColor = "#d9edff";
+                buttonMars.style.backgroundColor = "#FFCCCB";
+            });
+
+
+            function showParagraph(eval) {
+                evaluation.textContent = eval ? "Correct!" : "Incorrect";
+                evaluation.style.color = eval ? "#056608" : "#C04000";
+                evaluation.style.backgroundColor = eval ? "#CCFFCD" : "#FFCCCB";
+                evaluation.style.padding = "8px";
+                h3Planet.insertAdjacentElement('afterend', evaluation);
+            }
+
+            // Free Response
+            h3Australia = document.getElementById("Australia");
+            buttonAustralia = document.getElementById("AustraliaSubmit");
+            inputAustralia = document.getElementById("AustraliaAnswer");
+            buttonAustralia.addEventListener("click", () => {
+
+                eval = inputAustralia.value === "Canberra";
+                inputAustralia.style.backgroundColor = eval ? "#CCFFCD" : "#FFCCCB";
+                evaluation.textContent = eval ? "Correct!" : "Incorrect";
+                evaluation.style.color = eval ? "#056608" : "#C04000";
+                evaluation.style.backgroundColor = eval ? "#CCFFCD" : "#FFCCCB";
+                evaluation.style.padding = "8px";
+                h3Australia.insertAdjacentElement('afterend', evaluation);
+            });
+        };
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <!-- TODO: Add multiple choice question here -->
+            <h3 id="Planet">What is the largest planet in our solar system by mass?</h3>
+            <button id="Earth">Earth</button>
+            <button id="Saturn">Saturn</button>
+            <button id="Jupiter">Jupiter</button>
+            <button id="Mars">Mars</button>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <!-- TODO: Add free response question here -->
+            <h3 id="Australia">What is the capital of Australia?</h3>
+            <input id="AustraliaAnswer"> <button id="AustraliaSubmit">Check Answer</button>
+        </div>
+    </div>
+</body>
+
+</html>
