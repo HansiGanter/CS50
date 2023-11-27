@@ -1,0 +1,61 @@
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+    padding: 32px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: calc(100vh - 102px);
+}
+
+.gradient-heading {
+    font-size: 3rem;
+    background: linear-gradient(to right, rgb(0, 98, 204), rgb(2, 174, 172));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-primary:hover {
+    box-shadow: 0px 0px 40px 5px rgba(129, 216, 214, .5);
+    color: white;
+}
+
+#h1hobbies {
+    position: relative;
+}
+
+#hobbies {
+    position: absolute;
+    top: 100%;
+}
+
+@keyframes slideUp {
+    0% {
+        top: 30px;
+        opacity: 0;
+    }
+
+    20% {
+        top: -5px;
+        opacity: 100%
+    }
+
+    80% {
+        top: -5px;
+        opacity: 100%
+    }
+
+    100% {
+        top: -30px;
+        opacity: 0;
+    }
+}
