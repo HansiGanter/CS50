@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+    <div class="container text-center mx-auto">
+        <table>
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>TOTAL</th>
+                    <th>Buy more</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stocks %}
+                    <tr>
+                        <th>{{stock.stock_symbol}}</th>
+                        <th>{{stock.name}}</th>
+                        <th>{{stock.shares}}</th>
+                        <th>{{stock.price}}</th>
+                        <th>{{stock.total}}</th>
+                        <th>
+                            <form action="/buy" method="post" class="d-inline-flex" style="gap:1rem">
+                                <input autocomplete="off" id="symbol" name="symbol" type="text" required value={{stock.stock_symbol}} hidden>
+                                <input autofocus class="form-control mx-auto" style="width: 5rem" id="shares" name="shares" placeholder="1" min=1 type="number" required>
+                                <button class="btn btn-primary" type="submit">Buy</button>
+                            </form>
+                        </th>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Cash</th>
+                    <th>{{ "${:.2f}".format(cash) }}</th>
+                    <th>
+                        <form action="/addcash" method="post" class="d-inline-flex" style="gap:1rem">
+                            <input autocomplete="off" autofocus class="form-control mx-auto" style="width: 5rem" id="cash" name="cash" placeholder="$100" type="number" required>
+                            <button class="btn btn-primary" type="submit">Add Cash</button>
+                        </form>
+                    </th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>TOTAL</th>
+                    <th>{{total}}</th>
+                    <th></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

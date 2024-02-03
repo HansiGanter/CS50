@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+    <div class="container text-center mx-auto">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Symbol</th>
+                    <th>Price</th>
+                    <th>Shares</th>
+                    <th>total</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <th>{{transaction.transaction_type }}</th>
+                    <th>{{transaction.stock_symbol}}</th>
+                    <th>{{transaction.price_share}}</th>
+                    <th>{{transaction.num_shares}}</th>
+                    <th>{{transaction.total}}</th>
+                    <th>{{transaction.created_at}}</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

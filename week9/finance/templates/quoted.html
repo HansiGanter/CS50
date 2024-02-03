@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <div class="container text-center mx-auto" style="width: 400px;">
+        <div class="row justify-content-md-center">
+            <div class="col">
+                Name:
+            </div>
+            <div class="col">
+                {{stock["name"]}}
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col">
+                Price:
+            </div>
+            <div class="col">
+                {{stock["price"]}}
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col">
+                Symbol:
+            </div>
+            <div class="col">
+                {{stock["symbol"]}}
+            </div>
+        </div>
+    </div>
+{% endblock %}
